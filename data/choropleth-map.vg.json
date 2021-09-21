@@ -1,34 +1,34 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "COVID-19 Active Cases (10 Oct 2020)",
+    "title": "Energy Usage by Country per Capita",
     "width": 800,
     "height": 600,
     "projection": {
         "type": "equirectangular"
     },
     "data": {
-        "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+        "url": "https://raw.githubusercontent.com/brianbingbong/energy-data-viz/main/data/world_map.topojson.json",
     "format": {
             "type": "topojson",
-            "feature": "ne_110m_admin_0_countries"
+            "feature": "custom.geo"
         }
     },
     "transform": [
         {
-            "lookup": "properties.NAME",
+            "lookup": "properties.name",
             "from": {
                 "data": {
-                    "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
+                    "url": "https://raw.githubusercontent.com/brianbingbong/energy-data-viz/main/data/worldometers_energy.csv"
                 },
-                "key": "Country",
+                "key": "name",
                 "fields": [
-                    "Active"
+                    "pc_yearly_btu"
                 ]
             }
         },
         {
-            "calculate": "datum.Active + 0.1",
-            "as": "Active Cases"
+            "calculate": "datum.pc_yearly_btu + 0.1",
+            "as": "Yearly energy per capita (BTU)"
         }
     ],
     "mark": {
@@ -36,7 +36,7 @@
     },
     "encoding": {
         "color": {
-            "field": "Active Cases",
+            "field": "Yearly energy per capita (BTU)",
             "type": "quantitative",
             "scale": {
                 "type": "log"
@@ -44,13 +44,14 @@
         },
         "tooltip": [
             {
-                "field": "properties.NAME",
+                "field": "properties.name",
                 "type": "nominal",
                 "title": "Country"
             },
             {
-                "field": "Active",
-                "type": "quantitative"
+                "field": "Yearly energy per capita (BTU)",
+                "type": "quantitative",
+                "title": "BTUs"
             }
         ]
     }
