@@ -4,7 +4,7 @@
     "width": 800,
     "height": 600,
     "projection": {
-        "type": "equirectangular"
+        "type": "equalEarth"
     },
     "data": {
         "url": "https://raw.githubusercontent.com/brianbingbong/energy-data-viz/main/data/world_map.topojson.json",
