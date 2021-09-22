@@ -36,7 +36,8 @@
                         },
                         "key": "name",
                         "fields": [
-                            "pc_yearly_btu"
+                            "pc_yearly_btu",
+                            "re_nuclear"
                         ]
                     }
                 }
@@ -49,7 +50,8 @@
                     "field": "pc_yearly_btu",
                     "type": "quantitative",
                     "scale": {
-                        "type": "log"
+                        "type": "log",
+                        "scheme": "oranges"
                     },
                     "title": "BTUs"
                 },
@@ -63,6 +65,11 @@
                         "field": "pc_yearly_btu",
                         "type": "quantitative",
                         "title": "BTUs per capita"
+                    },
+                    {
+                        "field": "re_nuclear",
+                        "type": "ordinal",
+                        "title": "% Nuclear/Renewable"
                     }
                 ]
             }
