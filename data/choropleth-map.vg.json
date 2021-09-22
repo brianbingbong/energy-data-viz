@@ -22,7 +22,7 @@
             },
             "encoding": {
                 "tooltip": {
-                    "field": "properties.NAME"
+                    "field": "properties.name"
                 }
             }
         },
