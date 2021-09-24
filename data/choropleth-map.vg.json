@@ -68,8 +68,8 @@
                     },
                     {
                         "field": "re_nuclear",
-                        "type": "ordinal",
-                        "title": "% Nuclear/Renewable"
+                        "type": "quantitative",
+                        "title": "Nuclear/Renewable fraction"
                     }
                 ]
             }
