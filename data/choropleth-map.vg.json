@@ -69,11 +69,10 @@
                     {
                         "field": "re_nuclear",
                         "type": "quantitative",
-                        "title": "Nuclear/Renewable fraction "
+                        "title": "Nuclear/Renewable fraction"
                     }
                 ]
             }
         }
     ]
-
 }
